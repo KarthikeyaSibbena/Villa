@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villa</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Villa Property Listing</title>
+<style>
+/* Start of nav bar */
+    /* upper nav  */
+    .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 5px 30px;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    }
+    .top-left, .top-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .top-left span, .top-right a {
+        display: flex;
+        align-items: center;
+        color: black;
+        text-decoration: none;
+    }
+    .top-left i {
+        color: orangered;
+        margin-right: 6px;
+    }
+    .top-right a i {
+        background: #ddd;
+        padding: 6px;
+        border-radius: 50%;
+        color: black;
+        font-size: 14px;
+    }
+    /*  lower nav bar */
+    .nav-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background:white;
+    }
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    nav {
+        display: flex;
+
+        gap: 30px;
+    }
+    nav a {
+        text-decoration: none;
+        color: black;
+        font-weight: 500 
+    }
+    .visit-btn {
+        display: flex;
+        align-items: center;
+        background: #1d1d1d;
+        color: white;
+        border-radius: 30px;
+        padding: 8px 16px;
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .visit-btn i {
+        background: orangered;
+        border-radius: 50%;
+        padding: 8px;
+        margin-right: 8px;
+        font-size: 14px;
+    }
+/* End of nav bar ......................................*/
+/* first part of home */
+    /* carousel images */
+    .carousel-inner{
+         width: 750px;
+         border: 10px;
+    }
+      #heroCarousel .carousel-indicators {
+      margin-left: 2px;
+      margin-bottom: 0%;
+      margin-right: 700px;
+    }
+    #heroCarousel .carousel-indicators [data-bs-target] {
+      width: 8px !important;
+      height: 8px !important;
+      border-radius: 50% !important;
+      background-color: white !important;
+        border: none !important;
+    }
+    #heroCarousel .carousel-indicators .active {
+      background-color: orangered !important; 
+    }
+    /*  location fixed text */
+    .carousel-text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: left;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .carousel-container {
+        position: relative;
+    }
+    #Toronto{
+        background-color: white;
+        color: black;
+        width: 110px;
+        font-size: 12px;
+        margin-bottom: 25px;
+    }
+    #Canada{
+        display: inline;
+        color: orangered;
+    }
+/*  end of first part of home............................................................................................... */
+/* second part of home */
+    /* Left Image */
+    .property-img {
+      border-radius: 6px;
+      width: 350px;
+      height: 400px;
+    }
+
+    /* Small floating icon on image */
+    .image-icon {
+      position: absolute;
+      bottom: -20px;
+      left: 20px;
+      background-color: orangered;
+      border-radius: 50%;
+      padding: 15px;
+      color: white;
+
+    }
+
+    /*Drop down box */
+    .links-box {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      max-width: 600px;
+    }
+    .faq-item {
+      padding: 15px 0;
+      border-top: 1px solid #eee;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .faq-item.active {
+      color: #ff5a3c;
+      font-weight: bold;
+    }
+
+    .faq-content {
+      padding: 10px 0 0 0;
+      color: #333;
+    }
+    /* Right info card */
+    .info-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 3px 8px rgba(23, 1, 1, 0.05);
+    }
+    .home-2-img-icon{
+      height: 55px;
+      padding: 5px;
+    }
+    .info-item {
+      display: flex;
+      align-items: center;
+      height: 85px;
+      padding: 15px 0;
+      border-bottom: 1px solid #f1f1f1;
+    }
+    .info-item:last-child {
+      border-bottom: none;
+    }
+    
+    .info-title {
+      font-weight: bold;
+      margin-bottom: 2px;
+    }
+    .info-sub {
+      color: gray;
+      font-size: 10px;
+    }
+/*  end of second part of home ................................................................................................*/
+/*Third part of home   */
+.bg-video {
+      background: url('/PROJECT 1 source/images/video-bg.jpg') center/cover no-repeat;
+      position: relative;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* Move content up */
+      align-items: center;
+      text-align: center;
+      padding-top: 100px; /* Push down from the top */
+    }
+    .bg-video::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    /* Ensure text appears above overlay */
+    .bg-video .content {
+      position: relative;
+      z-index: 1;
+    }
+    /* Play button */
+    .play-btn {
+  background-color: rgba(255, 68, 0, 0.9); /* orange background */
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+.play-btn:hover {
+  transform: scale(1.1);
+}
+
+.play-btn .triangle {
+  width: 0;
+  height: 0;
+  border-left: 18px solid white; /* white triangle */
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  margin-left: 5px;
+}
+
+/* end of Third part of home  ..................................................................................................*/
+/*   Fourth part of home  */
+    .bestdeal-container {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      color: #333;
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px;
+    }
+
+    .bestdeal-section-header {
+      color: #ff5a3c;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .bestdeal-title {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .bestdeal-button-group {
+      margin-top: -70px;
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .bestdeal-button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      color: white;
+    }
+
+    .bestdeal-btn-orange {
+      background-color: #ff5a3c;
+    }
+
+    .bestdeal-btn-dark {
+      background-color: #000;
+    }
+
+    .bestdeal-info-section {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      margin-top: 40px;
+    }
+
+    .bestdeal-info-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .bestdeal-info-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .bestdeal-info-row:last-child {
+      border-bottom: none;
+    }
+
+    .bestdeal-info-row strong {
+      font-weight: bold;
+    }
+
+    .bestdeal-image-section {
+      flex: 2;
+    }
+
+    .bestdeal-image-section img {
+      width: 480px;
+    }
+
+    .bestdeal-description {
+      flex: 1.5;
+    }
+
+    .bestdeal-description h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .bestdeal-description p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+/* end of Fourth part of home  ..................................................................................................*/
+/*  Fifth part of home  */
+    .properties-heading-section {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #fff;
+    }
+
+    .properties-heading-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .properties-heading-subtitle {
+      color: #e74c3c;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .properties-heading-title {
+      font-size: 36px;
+      font-weight: 800;
+      color: #222;
+      line-height: 1.4;
+    }
+    /* properties */
+        .first_part{
+        background-image: url(/PROJECT\ 1\ source/page-heading-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 400px;
+        text-align: center;
+        align-content: center;
+    }    
+    #home_sgl_property{
+    padding: 10px;
+    background-color: white;
+    display: inline;
+    }
+    #single_property{
+        color: azure;
+        margin-top: 20px;
+
+    }
+    .card img {
+      transition: transform 0.4s ease;
+    }
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .properties-heading-title {
+        font-size: 28px;
+      }
+    }
+
+
+/* end of Fifth part of home  .....................................................................................*/
+/*  Sixth part of home */
+
+    /* Section with background image */
+/* Contact Section */
+.csec-section {
+  background: url('/IMAGES/contact-bg.jpg') center/cover no-repeat;
+  position: relative;
+  height: 60vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0; 
+}
+
+.csec-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
+.csec-section .csec-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Heading */
+.csec-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.csec-heading small {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.csec-heading h2 {
+  font-weight: 700;
+  margin-top: 10px;
+  color: #fff;
+}
+
+/* Wrapper to pull content on top of background */
+.csec-wrapper {
+  margin-top: -150px; 
+  position: relative;
+  z-index: 3;
+}
+
+/* Map */
+.csec-map iframe {
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Contact form */
+.csec-form {
+  padding: 25px;
+  height: 400px; /* match map height */
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Bottom Info Cards */
+.csec-info {
+  margin-top: -40px; /* Pull cards closer to bottom of map */
+}
+
+.csec-card {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  width: 230px; /* Slightly smaller for compact fit */
+  margin: 0 auto; /* Center cards */
+}
+
+.csec-card i {
+  font-size: 24px;
+  color: #e63946;
+  margin-right: 12px;
+}
+
+.csec-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Button */
+.csec-btn {
+  background-color: #2d2d2d;
+  color: #fff;
+  border-radius: 50px;
+  padding: 10px 25px;
+  transition: 0.3s;
+}
+
+.csec-btn:hover {
+  background-color: #e63946;
+  color: #fff;
+}
+    
+/*  end of Sixth part of home  .....................................................................................*/
+    footer {
+        background: black;
+        color: white;
+        text-align: center;
+        align-content: center;
+        padding: 20px;
+        font-size: 15px;
+    }
+</style>
+
+<!-- css and bootstap ...............................................................................-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Start of body -->
+<body>
+<header>
+<!-- Start of nav bar -->
+<!-- upper nav bar -->
+<div class="top-bar">
+    <div class="top-left">
+        <span><i class="fas fa-envelope"></i> info@company.com</span>
+        <span><i class="fas fa-map-marker-alt"></i> Sunny Isles Beach, FL 33160</span>
+    </div>
+    <div class="top-right">
+        <a href=""><i class="fab fa-facebook-f"></i></a>
+        <a href=""><i class="fab fa-twitter"></i></a>
+        <a href=""><i class="fab fa-linkedin-in"></i></a>
+        <a href=""><i class="fab fa-instagram"></i></a>
+    </div>
+</div>
+<!-- lower nav bar -->
+<div class="nav-bar">
+    <div class="logo">VILLA</div>
+    <!-- link bar -->
+    <nav class="menu">
+        <a href="/PROJECT-1/Home.html" >Home</a>
+        <a href="/PROJECT-1/Properties.html">Properties</a>
+        <a href="/PROJECT-1/Property_Details.html">Property Details</a>
+        <a href="/PROJECT-1/Contact_Us.html">Contact Us</a>
+    </nav>
+    <!-- Calender schedule -->
+    <a href="" class="visit-btn"><i class="fas fa-calendar-alt"></i> Schedule a visit</a>
+</div>
+</header>
+<!-- End of nav bar ...........................................................................................................-->
+
+<!-- first part of home -->
+<section>
+    <!-- carousel images -->
+    <div class="carousel-container">
+        <!-- indicators -->
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <!-- images -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/IMAGES/banner-01.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/PROJECT 1 source/images/banner-02.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/PROJECT 1 source/images/banner-03.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+        </div>
+        <!-- location fixed text -->
+        <div class="carousel-text-overlay">
+            <div id="Toronto">Toronto,<div id="Canada">Canada</div>
+            </div>
+            <h1>HURRY! <BR> GET THE BEST <BR> VILLA FOR YOU</h1>
+        </div>
+    </div>
+</section>
+<!--  end of first part of home ........................................................................................-->
+<!--Second part of home   -->
+<div class="container py-5">
+    <div class="row align-items-start">
+        <!-- Left image -->
+        <div class="col-md-4 position-relative">
+            <img src="/PROJECT 1 source/images/featured.jpg" alt="Apartment" class="property-img">
+            <!-- image icon -->
+            <div class="image-icon">
+                <img src="/PROJECT 1 source/images/featured-icon.png" alt="">
+            </div>
+        </div>
+      
+        <!-- Middle text -->
+        <div class="col-md-5">
+            <p class="text-danger fw-bold mb-1">| FEATURED</p>
+            <h2 class="fw-bold">Best Apartment<br>& Sea View</h2>
+            <!-- links box -->
+            <div class="links-box">
+                <div class="faq-item " data-bs-toggle="collapse" data-bs-target="#faq1">
+                  Best useful links ?
+                  <div id="faq1" class="collapse  faq-content">
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque et eos nihil doloribus.
+                  </div>
+                </div>
+
+                <div class="faq-item" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  How does this work ?
+                  <div id="faq2" class="collapse faq-content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque et eos nihil doloribus.
+                  </div>
+                </div>
+
+                <div class="faq-item" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  Why is Villa Agency the best ?
+                  <div id="faq3" class="collapse faq-content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque et eos nihil doloribus.
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right  card -->
+        <div class="col-md-3">
+            <div class="info-card">
+                <div class="info-item">
+                    <img class="home-2-img-icon" src="/PROJECT 1 source/images/info-icon-01.png" alt="">
+                    <div>
+                        <div class="info-title">250 m²</div>
+                        <div class="info-sub">Total Flat Space</div>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                <img class="home-2-img-icon" src="/PROJECT 1 source/images/info-icon-02.png" alt="">          
+                    <div>
+                        <div class="info-title">Contract</div>
+                        <div class="info-sub">Contract Ready</div>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                <img class="home-2-img-icon" src="/PROJECT 1 source/images/info-icon-03.png" alt="">          
+                    <div>
+                        <div class="info-title">Payment</div>
+                        <div class="info-sub">Payment Process</div>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                <img class="home-2-img-icon" src="/PROJECT 1 source/images/info-icon-04.png" alt="">          
+                    <div>
+                        <div class="info-title">Safety</div>
+                        <div class="info-sub">24/7 Under Control</div>
+                    </div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- end of second part of home ............................................................................................... -->
+ <!--Third part of home  -->
+<!-- Background Section with Text Shifted Up -->
+<section class="bg-video text-white">
+  <div class="content">
+    <p class="text-uppercase fw-semibold mb-2" style="color: #ff5722; font-size: 15px; letter-spacing: 1px;">
+      | Video View
+    </p>
+    <h2 style="font-size: 40px;" class="fw-bold mb-0">Get Closer View &<br>Different Feeling</h2>
+  </div>
+</section>
+
+<!-- Video Frame (Pulled Up) -->
+<div class="container position-relative" style="margin-top: -180px;">
+  <div class="bg-white rounded shadow overflow-hidden mx-auto" style="max-width: 900px;">
+    <div class="position-relative">
+      <img src="/PROJECT 1 source/images/video-frame.jpg" class="img-fluid" alt="Video Thumbnail">
+      <button class="play-btn position-absolute top-50 start-50 translate-middle">
+        <span class="triangle"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Stats Section -->
+<div class="container my-5">
+  <div class="row g-5 justify-content-center">
+    
+    <div class="col-6 col-md-3">
+      <div class="rounded position-relative d-flex justify-content-center align-items-center px-4" 
+           style="background-color: #ffe5db; height: 100px;">
+        <span class="rounded-circle position-absolute top-0 start-100 translate-middle" 
+              style="width: 50px; height: 50px; background-color: orangered;"></span>
+        <div class="d-flex align-items-center">
+          <div class="fs-2 fw-bolder me-4" style="color: orangered;">34</div>
+          <div class="fw-semibold text-start">
+            Buildings<br>Finished Now
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+      <div class="rounded position-relative d-flex justify-content-center align-items-center px-4" 
+           style="background-color: #ffe5db; height: 100px;">
+        <span class="rounded-circle position-absolute top-0 start-100 translate-middle" 
+              style="width: 50px; height: 50px; background-color: orangered;"></span>
+        <div class="d-flex align-items-center">
+          <div class="fs-2 fw-bolder me-4" style="color: orangered;">12</div>
+          <div class="fw-semibold text-start">
+            Years<br>Experience
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+      <div class="rounded position-relative d-flex justify-content-center align-items-center px-4" 
+           style="background-color: #ffe5db; height: 100px;">
+        <span class="rounded-circle position-absolute top-0 start-100 translate-middle" 
+              style="width: 50px; height: 50px; background-color: orangered;"></span>
+        <div class="d-flex align-items-center">
+          <div class="fs-2 fw-bolder me-4" style="color: orangered;">24</div>
+          <div class="fw-semibold text-start">
+            Awards<br>Won 2023
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+ <!--  end of Third part of home  ..............................................................................................-->
+ <!--   Fourth part of home -->
+<div class="bestdeal-container">
+  <div class="bestdeal-section-header">| BEST DEAL</div>
+  <div class="bestdeal-title">Find Your Best Deal<br>Right Now!</div>
+
+  <div class="bestdeal-button-group">
+    <button class="bestdeal-button bestdeal-btn-orange">Appartment</button>
+    <button class="bestdeal-button bestdeal-btn-dark">Villa House</button>
+    <button class="bestdeal-button bestdeal-btn-dark">Penthouse</button>
+  </div>
+
+  <div class="bestdeal-info-section">
+    <div class="bestdeal-info-card">
+      <div class="bestdeal-info-row">
+        <span>Total Flat Space</span>
+        <strong>540 m2</strong>
+      </div>
+      <div class="bestdeal-info-row">
+        <span>Floor number</span>
+        <strong>3</strong>
+      </div>
+      <div class="bestdeal-info-row">
+        <span>Number of rooms</span>
+        <strong>8</strong>
+      </div>
+      <div class="bestdeal-info-row">
+        <span>Parking Available</span>
+        <strong>Yes</strong>
+      </div>
+      <div class="bestdeal-info-row">
+        <span>Payment Process</span>
+        <strong>Bank</strong>
+      </div>
+    </div>
+
+    <div class="bestdeal-image-section">
+      <img src="/PROJECT 1 source/images/deal-01.jpg" alt="Apartment Interior">
+    </div>
+
+    <div class="bestdeal-description">
+      <h3>All Info About Apartment</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod tempor pack incididunt ut labore et dolore magna aliqua quised ipsum suspendisse.</p>
+      <p>Swag fanny pack lyft blog twee. JOMO ethical copper mug, succulents typewriter shaman DIY kitsch twee taiyaki fixie hella venmo after messenger poutine next level humblebrag swag franzen.</p>
+      <button class="visit-btn">
+             <a href="" class="visit-btn"><i class="fas fa-calendar-alt"></i> Schedule a visit</a>
+      </button>
+    </div>
+  </div>
+</div>
+ <!--  end of Fourth part of home  ...........................................................................................-->
+ <!--   Fifth part of home  -->
+<section class="properties-heading-section">
+  <div class="properties-heading-container">
+    <p class="properties-heading-subtitle">| PROPERTIES</p>
+    <h2 class="properties-heading-title">We Provide The Best<br>Property You Like</h2>
+  </div>
+</section>
+<div class="container">
+  <div class="row g-4">
+    <!-- Card 1 -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card border-0 shadow-sm h-100">
+        <img src="/PROJECT 1 source/images/property-01.jpg" class="card-img-top rounded-top" alt="Property">
+        <div class="card-body">
+          <span class="badge rounded-1 mb-2" style="background-color:#ffe7e0; color:#ff4f00;">Luxury Villa</span>
+          <h5 class="fw-bold" style="color:#ff4f00;">$2,264,000</h5>
+          <p class="fw-bold mb-1">18 Old Street Miami, OR 97219</p>
+          <small class="text-muted">Bedrooms: 8 • Bathrooms: 8 • Area: 545m² • Floor: 3 • Parking: 6 spots</small>
+        </div>
+        <div class="card-footer bg-white border-0">
+          <a href="#" class="btn btn-dark w-100">Schedule a visit</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card border-0 shadow-sm h-100">
+        <img src="/PROJECT 1 source/images/property-02.jpg" class="card-img-top rounded-top" alt="Property">
+        <div class="card-body">
+          <span class="badge rounded-1 mb-2" style="background-color:#e0f7ff; color:#007bff;">Apartment</span>
+          <h5 class="fw-bold" style="color:#ff4f00;">$1,120,000</h5>
+          <p class="fw-bold mb-1">45 Ocean Drive, Miami, FL</p>
+          <small class="text-muted">Bedrooms: 4 • Bathrooms: 3 • Area: 320m² • Floor: 5 • Parking: 2 spots</small>
+        </div>
+        <div class="card-footer bg-white border-0">
+          <a href="#" class="btn btn-dark w-100">Schedule a visit</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card border-0 shadow-sm h-100">
+        <img src="/PROJECT 1 source/images/property-03.jpg" class="card-img-top rounded-top" alt="Property">
+        <div class="card-body">
+          <span class="badge rounded-1 mb-2" style="background-color:#e0ffe5; color:#28a745;">Penthouse</span>
+          <h5 class="fw-bold" style="color:#ff4f00;">$3,500,000</h5>
+          <p class="fw-bold mb-1">99 Downtown Street, NY</p>
+          <small class="text-muted">Bedrooms: 6 • Bathrooms: 5 • Area: 720m² • Floor: 10 • Parking: 4 spots</small>
+        </div>
+        <div class="card-footer bg-white border-0">
+          <a href="#" class="btn btn-dark w-100">Schedule a visit</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card border-0 shadow-sm h-100">
+        <img src="/PROJECT 1 source/images/property-04.jpg" class="card-img-top rounded-top" alt="Property">
+        <div class="card-body">
+          <span class="badge rounded-1 mb-2" style="background-color:#ffe7e0; color:#ff4f00;">Luxury Villa</span>
+          <h5 class="fw-bold" style="color:#ff4f00;">$1,980,000</h5>
+          <p class="fw-bold mb-1">120 Palm Beach, FL</p>
+          <small class="text-muted">Bedrooms: 5 • Bathrooms: 4 • Area: 450m² • Floor: 2 • Parking: 3 spots</small>
+        </div>
+        <div class="card-footer bg-white border-0">
+          <a href="#" class="btn btn-dark w-100">Schedule a visit</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card border-0 shadow-sm h-100">
+        <img src="/PROJECT 1 source/images/property-05.jpg" class="card-img-top rounded-top" alt="Property">
+        <div class="card-body">
+          <span class="badge rounded-1 mb-2" style="background-color:#e0f7ff; color:#007bff;">Apartment</span>
+          <h5 class="fw-bold" style="color:#ff4f00;">$880,000</h5>
+          <p class="fw-bold mb-1">500 Brickell Ave, Miami</p>
+          <small class="text-muted">Bedrooms: 3 • Bathrooms: 2 • Area: 210m² • Floor: 8 • Parking: 1 spot</small>
+        </div>
+        <div class="card-footer bg-white border-0">
+          <a href="#" class="btn btn-dark w-100">Schedule a visit</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card border-0 shadow-sm h-100">
+        <img src="/PROJECT 1 source/images/property-06.jpg" class="card-img-top rounded-top" alt="Property">
+        <div class="card-body">
+          <span class="badge rounded-1 mb-2" style="background-color:#e0ffe5; color:#28a745;">Penthouse</span>
+          <h5 class="fw-bold" style="color:#ff4f00;">$2,750,000</h5>
+          <p class="fw-bold mb-1">15 Central Park, NY</p>
+          <small class="text-muted">Bedrooms: 4 • Bathrooms: 4 • Area: 500m² • Floor: 12 • Parking: 2 spots</small>
+        </div>
+        <div class="card-footer bg-white border-0">
+          <a href="#" class="btn btn-dark w-100">Schedule a visit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ <!--  end of Fifth part of home  .................................................................................................-->
+<!-- Sixth part of home -->
+<!-- Contact -->
+<!-- Background Section -->
+<section class="csec-section text-white">
+  <div class="csec-container">
+    <p class="text-uppercase fw-semibold mb-3" style="color: #ff5722; font-size: 13px; letter-spacing: 1px;">
+      | CONTACT US
+    </p>
+    <h2 style="font-size: 40px;" class="fw-bold mb-0">Get In Touch With<br>Our Agents</h2>
+  </div>
+</section>
+
+<!-- Map & Form on top of Background -->
+<div class="container csec-wrapper">
+  <div class="row g-4 align-items-stretch">
+    <!-- Map -->
+    <div class="col-lg-6 csec-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.191027212345!2d-80.123456!3d25.950123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1234567890abcdef!2sSunny%20Isles%20Beach!5e0!3m2!1sen!2sus!4v1692300000000"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="col-lg-6">
+      <div class="csec-form">
+        <form>
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Full Name...">
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Email Address...">
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Subject...">
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+          </div>
+          <button type="submit" class="btn csec-btn" style="color: aliceblue; background: #000;">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Info Cards (closer under map) -->
+  <div class="row g-2 mt-3 csec-info justify-content-start">
+    <!-- Phone Card -->
+    <div class="col-md-3">
+      <div class="csec-card">
+        <img src="/PROJECT 1 source/images/phone-icon.png" alt="Phone Icon" style="width:35px; height:35px; margin-right:12px;">
+        <div>
+          <h6 class="mb-0">010-020-0340</h6>
+          <small class="text-muted">Phone Number</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Email Card -->
+    <div class="col-md-3">
+      <div class="csec-card">
+        <img src="/PROJECT 1 source/images/email-icon.png" alt="Email Icon" style="width:35px; height:35px; margin-right:12px;">
+        <div>
+          <h6 class="mb-0">info@villa.co</h6>
+          <small class="text-muted">Business Email</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!--  end of Sixth part of home  .................................................................................................-->
+
+<!-- essentisl link end page -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<footer>
+    Copyright @ 2048 Villa Agency Co.Ltd. All rights reserved. Design:Praharsha
+</footer>
+
+</body>
+</html>
+
+</body>
+</html>
